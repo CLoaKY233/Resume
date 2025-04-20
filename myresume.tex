@@ -1,6 +1,6 @@
 
 
-\documentclass[letterpaper,8pt]{article}
+\documentclass[letterpaper,7pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -18,6 +18,8 @@
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
+
+
 
 \RequirePackage{tikz}
 \RequirePackage{xcolor}
@@ -58,8 +60,8 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{1pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -68,23 +70,23 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-1pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{1pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{\normalsize#1} & \textbf{\small #2} \\
       \textit{\normalsize#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-2pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-2pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -95,7 +97,7 @@
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.1in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,110 +106,123 @@
 
 % Heading section
 \begin{center}
-    {\huge \textbf{Lay Sheth}} \\ \vspace{2pt} 
-    {+91 7000035904} 
+    {\huge \textbf{Lay Sheth}} \\ \vspace{2pt}
+    {+91 7000035904}
     \small{ - }
-    {laysheth1@gmail.com} 
+    {laysheth1@gmail.com}
     \small{ - }
     {\href{https://linkedin.com/in/cloaky233}{LinkedIn:Cloaky233}}
     \small{ - }
     {\href{https://github.com/CLoaKY233}{GitHub:Cloaky233}}
+    \small{ - }
+    {\href{https://cloaky.works}{Portfolio: cloaky.works}}
     \vspace{-7pt}
 \end{center}
 
+
+% % Summary section - Add this after the center environment with contact info and before Education section
+% \section{{SUMMARY}}
+% \resumeItemListStart
+%     \resumeItem{Results-driven Computer Science student and Machine Learning Engineer with advanced Python, intermediate Rust, and JavaScript/TypeScript skills. Specialized in developing high-performance systems using TensorFlow, PyTorch, and Kafka for distributed applications. Demonstrated experience in web scraping optimization, real-time image classification, and RAG-based question answering systems. Strong technical foundation with proven ability to reduce processing time by 97\% and build systems handling several records while maintaining data integrity and shorter response times.}
+% \resumeItemListEnd
+
 % Education section
-\section{\textcolor{airforceblue}{EDUCATION}}
+\section{{EDUCATION}}
 \resumeSubHeadingListStart
     \resumeSubheading
       {VIT Bhopal University}{09/2022 -- 05/2026}
       {B.Tech in Computer Science - 8.95 GPA}{Bhopal, India}
-    \resumeSubheading
-      {Medicaps International}{04/2020 -- 06/2022}
-      {Achieved 86\% in 12th grade}{Indore, India}
-\resumeSubHeadingListEnd
-
-% Technical Skills section - Update with provided skills
-\section{\textcolor{airforceblue}{TECHNICAL SKILLS}}
-\resumeItemListStart
-    \resumeItem{\textbf{Programming Languages:} Python (Advanced), Rust (Intermediate), TypeScript/JavaScript (Intermediate)}
-    \resumeItem{\textbf{Deep Learning Frameworks:} TensorFlow, PyTorch, Keras}
-    \resumeItem{\textbf{Libraries \& Tools:} NumPy, Pandas, Polars, Scikit-learn, OpenCV, Git, MLFlow}
-\resumeItemListEnd
-
-
-
-
-
-
-
-% Projects section - Update with provided projects
-\section{\textcolor{airforceblue}{PROJECTS}}
-\resumeSubHeadingListStart
-
-
-\resumeProjectHeading
-{\textbf{High-Performance Web Scraping System: Python vs Rust Implementation}}{07/2024}
-\resumeItemListStart
-\resumeItem{Constructed dual-implementation of web scrapers using Python (BeautifulSoup4) and Rust (Tokio/reqwest), achieving 100\% data extraction accuracy from 10,000+ Amazon product listings}
-\resumeItem{Architected concurrent scraping system in Rust using async/await patterns and Tokio runtime, processing 500 simultaneous connections while maintaining memory usage under 300MB}
-\resumeItem{Implemented robust error handling and rate limiting mechanisms, reducing server rejection rate by 95\% and achieving 99.9\% scraping reliability}
-\resumeItem{Established performance through Rust's zero-cost abstractions and memory management, resulting in 97\% reduction in processing time (50s to 1.2s) compared to Python implementation}
-\resumeItem{Fabricated CSV data pipeline with custom serialization, handling 100,000+ records while ensuring thread-safe concurrent writes and maintaining data integrity}
-\resumeItemListEnd
-
-\resumeProjectHeading
-{\textbf{Distributed Real-time Image Classification System with Apache Kafka}}{08/2024}
-\resumeItemListStart
-\resumeItem{Designed a high-performance distributed image classification pipeline using Apache Kafka, TensorFlow, and Python, processing 10+ images/second with 91\% accuracy on a dataset of 10,000 images}
-\resumeItem{Spearheaded concurrent message processing using Kafka consumers and producers, reducing latency by 65\% through parallel processing and achieving sub-400ms classification response time}
-\resumeItem{Created a CNN architecture with 4 convolutional layers and 2 dense layers using TensorFlow/Keras, trained on google collab instances,and a model size reduction of 40\% while maintaining accuracy}
-% \resumeItem{Optimized system scalability through Kafka topic partitioning (8 partitions) and consumer group management, enabling horizontal scaling to handle 3x increase in throughput}
-\resumeItem{Integrated error handling and monitoring systems using Python logging and Kafka metrics, achieving 99.9\% system uptime and automated recovery from failures}
-\resumeItemListEnd
-
-\resumeProjectHeading
-{\textbf{Advanced RAG-based Question Answering System with Mistral LLM}}{09/2024}
-\resumeItemListStart
-\resumeItem{Architected a production-grade RAG (Retrieval Augmented Generation) system using LangChain and Mistral LLM, processing 1,000+ document chunks with 92\% response accuracy}
-\resumeItem{Implemented sophisticated document processing pipeline with optimized text chunking (chunk size=1000, overlap=200) and Sentence Transformers embeddings, reducing context loss by 75\%}
-\resumeItem{Integrated vector store integration using ChromaDB for efficient similarity search, achieving sub-100ms query response times on 100,000+ embedding vectors}
-\resumeItem{Built responsive Streamlit-based UI with async document processing, real-time progress tracking, and customizable LLM parameters, handling 10+ concurrent users (tested)}
-% \resumeItem{Integrated robust error handling and logging system, achieving 99.9\% system uptime and automatic recovery from LLM connection failures}
-\resumeItemListEnd
-
-
-
 
 \resumeSubHeadingListEnd
+
+\section{{TECHNICAL SKILLS}}
+\resumeItemListStart
+    \resumeItem{
+        \textbf{Languages:} Python (Advanced), Rust, TypeScript/JavaScript \quad
+        \textbf{Frameworks:} TensorFlow, PyTorch, Keras \quad
+        \textbf{Tools:} NumPy, Pandas, Polars, Scikit-learn, OpenCV, Git, MLFlow
+    }
+\resumeItemListEnd
+
+
 
 
 
 % Work Experience section - Update with provided experience
-\section{\textcolor{airforceblue}{WORK EXPERIENCE}}
+\section{{WORK EXPERIENCE}}
 \resumeSubHeadingListStart
     \resumeSubheading
       {ThePreProdCorp}{07/2024 -- 12/2024}
       {Machine Learning Engineering Intern}{Bengaluru, India (Remote)}
       \resumeItemListStart
-        \resumeItem{Engineered AutoML solutions for automated model selection and hyperparameter tuning, reducing model development time by 40\%}
-        \resumeItem{Designed and deployed end-to-end data pipelines integrating streaming data, real-time visualization, and model deployment}
+        \resumeItem{Spearheaded AutoML solutions for automated model selection and hyperparameter tuning, reducing model development time by 40\%}
+        \resumeItem{Mapped and deployed end-to-end data pipelines integrating streaming data, real-time visualization, and model deployment}
         \resumeItem{Developed RAG systems with open-source LLMs (Mistral, Llama), achieving 85\% accuracy in context retrieval}
         \resumeItem{Collaborated with cross-functional teams to optimize data flow and enhance model serving architecture}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 
+\section{{PROJECTS}}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Advanced RAG-based Question Answering System with Mistral LLM}}{09/2024}
+\resumeItemListStart
+\resumeItem{Architected RAG system using LangChain, Mistral LLM, and Sentence Transformers, processing 500+ document chunks with 88\% response accuracy}
+\resumeItem{Engineered document processing pipeline with optimized text chunking (chunk size=800, overlap=100) and ChromaDB vector store for efficient similarity search}
+\resumeItem{Constructed responsive UI with Streamlit and async processing, achieving sub-200ms query response times and handling customizable LLM parameters}
+\resumeItemListEnd
 
-% Work Experience section - Update with provided experience
-\section{\textcolor{airforceblue}{ACHIEVEMENTS}}
+\resumeProjectHeading
+{\textbf{High-Performance Web Scraping System: Python vs Rust Implementation}}{07/2024}
+\resumeItemListStart
+\resumeItem{Crafted dual web scrapers using Python (BeautifulSoup4, requests) and Rust (Tokio, reqwest) to extract data from 5,000+ Amazon product listings.}
+\resumeItem{Implemented concurrent scraping using Rust's async/await patterns with Tokio runtime, reducing server rejection rate by 70\% through proper rate limiting and error handling}
+\resumeItem{Optimized CSV data pipeline with custom serialization in both Python and Rust, achieving 85\% reduction in processing time while maintaining thread-safe writes}
+\resumeItemListEnd
+
+\resumeProjectHeading
+{\textbf{Distributed Real-time Image Classification System with Apache Kafka}}{08/2024}
+\resumeItemListStart
+\resumeItem{Established distributed image classification pipeline using Apache Kafka, TensorFlow, Keras, and Python, processing 5+ images/second with 87\% accuracy}
+\resumeItem{Implemented concurrent message processing with Kafka producers, consumers and topic partitioning, reducing latency by 40\% through parallel processing}
+\resumeItem{Defined CNN architecture in TensorFlow/Keras with 4 convolutional layers, integrating Python logging and Kafka metrics for monitoring and error handling}
+\resumeItemListEnd
+
+
+
+\resumeSubHeadingListEnd
+
+\section{{ACHIEVEMENTS}}
 \resumeSubHeadingListStart
     \resumeSubheading
       {Smart India Hackathon(SIH)}{12/2024}
       {National Level Hackathon Finalist}{Team of 6}
       \resumeItemListStart
-        \resumeItem{Developed cost-effective myoelectric prosthetic hand achieving 92\% cost reduction (Rs 12,500 vs Rs 1,50,000 market average) while maintaining core functionality through innovative dry electrode implementation}
-        \resumeItem{Engineered companion mobile app processing EMG signals from 3 dry electrodes with distinct gesture recognition patterns achieving 85\% accuracy with real-time control}
+        \resumeItem{Pioneered cost-effective myoelectric prosthetic hand achieving 92\% cost reduction (Rs 12,500) with companion mobile app processing EMG signals from dry electrodes, enabling real-time gesture recognition with 85\% accuracy}
+      \resumeItemListEnd
+
+      \resumeSubheading
+      {PreProdCorp Buildathon}{12/2024}
+      {College Hackathon Winner}{Team of 3}
+      \resumeItemListStart
+        \resumeItem{Pioneered an automated machine learning (AutoML) platform leveraging Streamlit and PyCaret, accelerating model training cycles by 75\% and enabling citizen data scientists to build models.}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
+
+
+\section{{EXTRACURRICULAR ACTIVITIES}}
+\resumeSubHeadingListStart
+    \resumeSubheading
+      {Competitive Online Gaming: Valorant, Fortnite, Minecraft}{2022 -- Present}
+      {}{Online}
+      \resumeItemListStart
+        \resumeItem{Attained Ascendent rank in Valorant and Top 5\% in Fortnite, demonstrating advanced strategic thinking}
+        \resumeItem{Led gaming teams in online tournaments and multiplayer events, coordinating strategy and fostering teamwork among diverse participants}
+        \resumeItem{Designed and managed large-scale Minecraft builds and survival challenges, developing project management and creative skills}
+        \resumeItem{Actively participated in online gaming communities, sharing guides and collaborating on gameplay strategies}
+      \resumeItemListEnd
+\resumeSubHeadingListEnd
+
 
 \end{document}
