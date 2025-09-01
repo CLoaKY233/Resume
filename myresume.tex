@@ -30,7 +30,7 @@
 \urlstyle{same}
 
 \raggedbottom
-\raggedright
+% \raggedright
 \setlength{\tabcolsep}{0in}
 
 %-------------------------
@@ -47,8 +47,8 @@
 \def\spaceBetweenSubheadings{-1pt}
 \def\spaceAfterSubheading{-7pt}
 \def\spaceAfterProjectHeading{-7pt}
-\def\spaceBetweenBulletItems{1pt}
-
+\def\spaceBetweenBulletItems{3pt}
+\linespread{1.09}
 
 
 
@@ -171,7 +171,7 @@
     \small{ - }
     {\href{mailto://laysheth1@gmail.com}{laysheth1@gmail.com}}
     \small{ - }
-    {\href{https://linkedin.com/in/cloaky233}{LinkedIn:Cloaky233}}
+    {\href{https://www.linkedin.com/in/laysheth}{LinkedIn:laysheth}}
     \small{ - }
     {\href{https://github.com/CLoaKY233}{GitHub:Cloaky233}}
     \small{ - }
@@ -184,85 +184,120 @@
 \resumeSubHeadingListStart
     \resumeSubheading
       {VIT Bhopal University}{09/2022 -- 05/2026}
-      {B.Tech in Computer Science - 8.86 GPA}{Bhopal, India}
+      {B.Tech in Computer Science - 8.89/10 GPA}{Bhopal, India}
 \resumeSubHeadingListEnd
 
+
 \section{TECHNICAL SKILLS}
-
-
-
 \resumeItemListStart
     \resumeItem{
-        \textbf{Languages:} Python (Advanced), Rust, TypeScript/JavaScript}
-        \resumeItem{\textbf{Frameworks:} PyTorch, TensorFlow, Keras, Burn, Hugging Face Transformers, GitHub Models, Google ADK, MCP SDK}
-        \resumeItem{\textbf{Frameworks:} n8n,Streamlit, Tauri, FastAPI, Flask, Next.js}
-
+        \textbf{Programming Languages \& Frameworks:} Python, Rust, TypeScript/JavaScript | FastAPI, Flask, Next.js, Tokio, AsyncIO
+    }
+    \resumeItem{
+        \textbf{Databases \& Vector Stores:} PostgreSQL, SurrealDB, DynamoDB, Neo4j, Firestore |
+    }
+    \resumeItem{
+        \textbf{AI/ML \& Agentic Systems:} PyTorch, TensorFlow, Hugging Face Transformers | LangChain, LlamaIndex, MCP SDKs, Agentic Development Kit |
+    }
+    \resumeItem{
+        \textbf{Data Engineering \& Streaming:} Apache Kafka, Polars, Pandas, NumPy, MLflow, Seaborn |
+    }
+    \resumeItem{
+        \textbf{Cloud \& DevOps:} AWS, Docker, GitHub Actions, Vercel, Heroku | Production deployment, CI/CD pipelines, containerization
+    }
 \resumeItemListEnd
-\vspace{-4pt}
+
+
+\vspace{-2pt}
+
+
 
 % Work Experience section
-\section{{WORK EXPERIENCE}}
+\section{WORK EXPERIENCE}
 \resumeSubHeadingListStart
     \resumeSubheading
       {ThePreProdCorp}{07/2024 -- 12/2024}
       {Machine Learning Engineering Intern}{Bengaluru, India (Remote)}
       \resumeItemListStart
-        \resumeItem{Spearheaded AutoML solutions for automated model selection and hyperparameter tuning, reducing model development time by 40\%}
-        \resumeItem{Mapped and deployed end-to-end data pipelines integrating streaming data, real-time visualization, and model deployment}
-        \resumeItem{Developed RAG systems with open-source LLM (Mistral), achieving 85\% accuracy in context retrieval}
-        \resumeItem{Collaborated with cross-functional teams to optimize data flow and enhance model serving architecture}
+        \resumeItem{Layered AutoML pipeline with scikit-learn RandomizedSearchCV for automated model selection across 15+ algorithms, reducing model development cycle time through integrated hyperparameter optimization workflows.}
+        \resumeItem{Contributed to streaming pipeline processing real-time data ingestion via Kafka consumers with FastAPI model serving endpoints, implementing async request handling for concurrent inference workloads.}
+        \resumeItem{Constructed semantic search system as proof of concept integrating open source Mistral-7B transformer with ChromaDB vector store, achieving document retrieval through 3 metric (cosine, Euclidean, Manhattan) embedding similarity search served via Streamlit dashboard interface.}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 
 
-
+\vspace{6pt}
 
 \section{{PROJECTS}}
 \resumeSubHeadingListStart
+
+
 \resumeProjectHeading
-{\textbf{Retrieval Augmented Generation with Query Decomposition and GitHub Models }}{05/2025}
+{\textbf{Agentic RAG Engine with Iterative Self-Correction}}{05/2025}
 \resumeItemListStart
-\resumeItem{Engineered production-ready RAG system using GitHub Models API, ChromaDB vector store, and HuggingFace embeddings with modular architecture supporting 40+ AI models including GPT-4, Llama, and Cohere}
-\resumeItem{Implemented intelligent query decomposition pipeline with streaming responses and async processing, automatically breaking complex queries into maximum 5 focused sub-queries for comprehensive analysis}
-\resumeItem{Developed enterprise-grade system with dependency injection patterns, real-time streaming capabilities, and comprehensive error handling using Python 3.13+ and UV package manager}
+\resumeItem{Engineered production RAG system with 3-cycle iterative self-correction across 40+ LLM models, targeting 85\% confidence threshold through multi-LLM orchestration (Meta-Llama-405B, Cohere-command-r) with async streaming and token-aware context management.}
+\resumeItem{Implemented hybrid vector search combining SurrealDB HNSW indexing (3072D embeddings) with real-time Google Custom Search integration, processing 1000+ document chunks with sub-linear performance and Crawl4AI content extraction.}
+\resumeItem{Built modular architecture with LRU caching (100-item capacity), YAML prompt templating, dependency injection, and comprehensive error handling supporting concurrent queries at production scale.}
 \resumeItemListEnd
-\vspace{-6pt}
+
+
+
+
+
+
+
+\vspace{2pt}
+
+
+
 \resumeProjectHeading
-{\textbf{High-Performance Web Scraping System: Python vs Rust Implementation}}{07/2024}
+{\textbf{Kafka-Driven Distributed Image Classification Pipeline}}{08/2024}
 \resumeItemListStart
-\resumeItem{Architected dual web scrapers using Python (BeautifulSoup4, requests) and Rust (Tokio, reqwest) with custom headers and rate limiting to extract product data from Amazon listings}
-\resumeItem{Optimized concurrent scraping using Rust's async/await patterns with Tokio runtime, implementing safe multi-threading and proper error handling for reliable data collection}
-\resumeItem{Delivered CSV data pipeline with custom serialization in both languages, demonstrating performance comparison between interpreted and compiled approaches for large-scale data processing}
+\resumeItem{Architected Kafka-based asynchronous ML pipeline with producer-consumer topology for image ingestion, CNN inference, and result distribution across decoupled microservices.}
+\resumeItem{Built CNN classifier processing 256x256 grayscale images using PyTorch \& TensorFlow with batch training (size=32) and Adam optimizer.}
+\resumeItem{Engineered production deployment with ONNX optimization, Flask API serving, MLflow tracking, and cross-framework validation supporting PNG/JPG/WEBP formats.}
 \resumeItemListEnd
-\vspace{-6pt}
-\resumeProjectHeading
-{\textbf{Distributed Real-time Image Classification System with Apache Kafka}}{08/2024}
-\resumeItemListStart
-\resumeItem{Collaborated with 1 team member to develop distributed image classification pipeline using Apache Kafka, TensorFlow, and Keras with pre-trained CNN model for cat/dog classification}
-\resumeItem{Established concurrent message processing architecture with Kafka producers, consumers, and topic partitioning using 3 main components: receiver-predictor, sender, and result consumer}
-\resumeItem{Implemented CNN architecture with 4 convolutional layers processing 256x256 grayscale images, integrating Python logging and Kafka metrics for real-time monitoring and error handling}
-\resumeItemListEnd
+
+
+
+
+
+
+% \vspace{-6pt}
+
+
+% \resumeProjectHeading
+% {\textbf{High-Performant Concurrent Web Scraping Engine}}{07/2024}
+% \resumeItemListStart
+% \resumeItem{Engineered dual-language scraping system processing 1000+ concurrent requests using Rust Tokio async runtime and Python asyncio, achieving 10x performance improvement through Arc-shared selectors and zero-copy operations.}
+% \resumeItem{Implemented production-grade data extraction pipeline with custom rate limiting, user-agent rotation, and fault-tolerant error handling, processing structured CSV outputs at scale with BeautifulSoup4 and Scraper crate parsers.}
+% \resumeItem{Demonstrates cross-platform comparison framework demonstrating compiled vs interpreted language performance with concurrent futures.}
+% \resumeItemListEnd
+
+
+
+
 
 \resumeSubHeadingListEnd
-
-
-
-\section{{CO-CURRICULAR }}
+\vspace{6pt}
+\section{{ACHIEVEMENTS}}
 \resumeSubHeadingListStart
     \resumeSubheading
-      {Smart India Hackathon(SIH)}{12/2024}
-      {National Level Hackathon Finalist}{Team of 6}
+      {Smart India Hackathon (SIH)}{12/2024}
+      {National Finalist}{Team of 6}
       \resumeItemListStart
-        \resumeItem{Pioneered cost-effective myoelectric prosthetic hand achieving 92\% cost reduction (Rs 12,500) with companion mobile app processing EMG signals from dry electrodes, enabling real-time gesture recognition with 85\% accuracy}
+        \resumeItem{Designed and prototyped a low-cost myoelectric prosthetic hand using EMG sensors and an ESP32 microcontroller, drastically reducing the typical hardware cost [12k> prototype].}
+        \resumeItem{Developed a companion mobile app to process raw EMG signals powered by BLE, enabling real-time gesture recognition and control of the prosthetic.}
       \resumeItemListEnd
 \vspace{8pt}
       \resumeSubheading
       {PreProdCorp Buildathon}{12/2024}
-      {College Hackathon Winner}{Team of 3}
+      {Winner}{Team of 3}
       \resumeItemListStart
-        \resumeItem{Pioneered an automated machine learning (AutoML) platform leveraging Streamlit and PyCaret, accelerating model training cycles by 75\% and enabling data scientists to build models easily}
+        \resumeItem{Developed a web-based performant AutoML platform using Streamlit and PyCaret to automate model training, evaluation, and comparison for tabular datasets.}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
+
 
 \end{document}
