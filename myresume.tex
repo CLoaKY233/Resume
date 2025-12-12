@@ -1,5 +1,6 @@
 \documentclass[letterpaper,11pt]{article}
-\usepackage{paralist}
+
+\usepackage[utf8]{inputenc}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -8,248 +9,215 @@
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{fontawesome5}
-\usepackage{multicol}
-\usepackage{graphicx}
-\setlength{\multicolsep}{-3.0pt}
-\setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
 
-\RequirePackage{tikz}
-\RequirePackage{xcolor}
+
+% ----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+\usepackage[sfdefault]{roboto}
+\usepackage[sfdefault]{noto-sans}
+\usepackage[default]{sourcesanspro}
+
+% % serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.19in}
-\addtolength{\topmargin}{-.7in}
-\addtolength{\textheight}{1.4in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
 
 \raggedbottom
-% \raggedright
+\raggedright
 \setlength{\tabcolsep}{0in}
 
-%-------------------------
-% SPACING CONFIGURATION - EDIT THESE VALUES
-%-------------------------
-\def\spaceAboveSectionHeader{-6pt}
-\def\spaceBelowSectionHeader{-4pt}
-\def\spaceBelowHeaderContact{-2pt}
-\def\spaceBelowEdSec{-8pt}
-\def\spaceBelowTechSecContent{-8pt}
-\def\spaceBelowWorkSec{-8pt}
-\def\spaceBelowProjSec{-10pt}
-\def\spaceBetweenResumeItems{-4pt}
-\def\spaceBetweenSubheadings{-1pt}
-\def\spaceAfterSubheading{-7pt}
-\def\spaceAfterProjectHeading{-7pt}
-\def\spaceBetweenBulletItems{3pt}
-\linespread{1.14}
-
-
-
-
-
-
-
-
-
-
-
-%-------------------------
-%MODERN FONT CONFIGURATION
-%-------------------------
-% Modern font configuration
-\usepackage[T1]{fontenc}
-\usepackage{sourcesanspro}
-\renewcommand{\familydefault}{\sfdefault}
-
-% Color definitions
-\definecolor{cvblue}{HTML}{0E5484}
-\definecolor{black}{HTML}{130810}
-\definecolor{darkcolor}{HTML}{0F4539}
-\definecolor{cvgreen}{HTML}{3BD80D}
-\definecolor{taggreen}{HTML}{00E278}
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666}
-
-% Color assignments
-\colorlet{name}{black}
-\colorlet{tagline}{darkcolor}
-\colorlet{heading}{darkcolor}
-\colorlet{headingrule}{cvblue}
-\colorlet{accent}{darkcolor}
-\colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
-
-
-
-
-
-
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-% Sections formatting with configurable spacing
-\titleformat{\section}{
-  \vspace{\spaceAboveSectionHeader}\scshape\raggedright\large\bfseries
-}{}{0em}{}[\color{black}\titlerule \vspace{\spaceBelowSectionHeader}]
-
 %-------------------------
-% Custom commands with configurable spacing
+% Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{\spaceBetweenResumeItems}}
+    {#1 \vspace{-2pt}}
   }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{\spaceBetweenSubheadings}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{\normalsize#1} & \textbf{\small #2} \\
-      \textit{\normalsize#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{\spaceAfterSubheading}
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \vspace{\spaceBetweenSubheadings}\item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{\spaceAfterProjectHeading}
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{\spaceBelowEdSec}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.1in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{\spaceBelowTechSecContent}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \begin{document}
 
-% Heading section
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
 \begin{center}
-    {\huge \textbf{Lay Sheth}} \\ \vspace{1pt}
-    {+91 7000035904}
-    \small{ - }
-    {\href{mailto:laysheth1@gmail.com}{laysheth1@gmail.com}}
-    \small{ - }
-    {\href{https://www.linkedin.com/in/laysheth}{LinkedIn:laysheth}}
-    \small{ - }
-    {\href{https://github.com/CLoaKY233}{GitHub:Cloaky233}}
-    \small{ - }
-    {\href{https://cloaky.works}{Portfolio: cloaky.works}}
-    \vspace{\spaceBelowHeaderContact}
+    \textbf{\Huge \scshape Lay Sheth} \\ \vspace{3pt}
+    \small Software Engineer\\ \vspace{1pt}
+    \small +91 7000035904 $|$ \href{mailto:laysheth1@gmail.com}{\underline{laysheth1@gmail.com}} $|$
+    \href{https://linkedin.com/in/laysheth}  {\underline{linkedin.com/in/laysheth}} $|$
+    \href{https://github.com/cloaky233}{\underline{github.com/cloaky233}} $|$
+    \href{https://leetcode.com/u/laysheth/}{\underline{leetcode.com/laysheth}}
 \end{center}
 
-% Education section
-\section{{EDUCATION}}
-\resumeSubHeadingListStart
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
     \resumeSubheading
-      {VIT Bhopal University}{09/2022 -- 05/2026}
-      {B.Tech in Computer Science - 8.89/10 GPA}{Bhopal, India}
-\resumeSubHeadingListEnd
-
-
-\section{TECHNICAL SKILLS}
-\resumeSubHeadingListStart
-    \resumeItem{\textbf{Languages:} Python, Rust}
-    \vspace{-3pt}
-    \resumeItem{\textbf{Frameworks:} FastAPI, Flask, AsyncIO || Axum, Tauri, Actix}
-    \vspace{-3pt}
-    \resumeItem{\textbf{Databases \& Vector Stores:} PostgreSQL, DynamoDB, Neo4j, SurrealDB}
-    \vspace{-3pt}
-    \resumeItem{\textbf{AI/ML:} PyTorch, TensorFlow, LangChain, LlamaIndex, RAG}
-    \vspace{-3pt}
-    \resumeItem{\textbf{Data Engineering:} Apache Kafka, Pandas, NumPy, MLflow}
-    \vspace{-3pt}
-    \resumeItem{\textbf{Cloud \& Infrastructure:} AWS, Docker, Kubernetes, Linux, CI/CD, Ansible}
-    \vspace{-3pt}
-    \resumeItem{\textbf{Monitoring \& Observability:} Prometheus, Grafana}
-    \vspace{-3pt}
-    \resumeItem{\textbf{Version Control:} Git, GitHub, GitHub Actions}
-\resumeSubHeadingListEnd
-\vspace{\spaceBelowTechSecContent}
+      {Vellore Institute of Technology}{Bhopal, Madhya Pradesh}
+      {Bachelor of Technology in Computer Science; GPA: 8.89/10.00}{Sept. 2022 -- May 2026}
+  \resumeSubHeadingListEnd
 
 
 
-\vspace{4pt}
 
 
 
-% Work Experience section
-\section{WORK EXPERIENCE}
-\resumeSubHeadingListStart
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
     \resumeSubheading
-      {ThePreProdCorp}{09/2024 -- 12/2024}
-      {Machine Learning Engineering Intern}{Bengaluru, India (Remote)}
+      {Machine Learning Intern}{Sept. 2024 -- Dec. 2024}
+      {PreProd Corp}{Bengaluru, India (Remote)}
       \resumeItemListStart
-        \resumeItem{Implemented streaming pipeline processing real-time data ingestion via Kafka consumers with FastAPI model serving endpoints, implementing async request handling for concurrent inference workloads.}
-        \resumeItem{Constructed semantic search system as proof of concept integrating open source Mistral-7B transformer with ChromaDB vector store, achieving document retrieval through 3 metric (cosine, Euclidean, Manhattan) embedding similarity search served via Streamlit dashboard interface.}
-        \resumeItem{Layered automated ML pipeline using scikit-learn with grid search hyperparameter optimization, enabling model comparison across 8 regression and classification algorithms without manual parameter tweaking.}
+        \resumeItem{Decreased event processing latency from 250ms to 150ms by refactoring the Kafka consumer service to use \textbf{async batching} and connection pooling, resolving throughput bottlenecks in the real-time data pipeline.}
+        \resumeItem{Improved retrieval accuracy from 62\% to 87\% by replacing the embedding model for knowledge base after thorough benchmarking}
       \resumeItemListEnd
-\resumeSubHeadingListEnd
 
-
-
-\vspace{6pt}
-
-\section{{PROJECTS}}
-\resumeSubHeadingListStart
-
-
-\resumeProjectHeading
-{\textbf{\href{https://github.com/CLoaKY233/Multi-cycle-RAG}{Agentic RAG with Iterative Self-Correction}}}{05/2025}
-\resumeItemListStart
-\resumeItem{Built production RAG system with 3-cycle iterative self-correction across 40+ LLM models (Meta-Llama-405B, Cohere), achieving 85\% confidence threshold through multi-LLM orchestration and hybrid vector search combining SurrealDB HNSW indexing (3072-dimensional embeddings) with real-time Google Custom Search integration, processing 1000+ document chunks with sub-linear performance}
-
-\resumeItem{Implemented modular architecture with LRU caching (100-item capacity), YAML prompt templating, dependency injection, and comprehensive error handling supporting concurrent queries at production scale with real-time content extraction}
-\resumeItemListEnd
-
-
-\vspace{2pt}
-
-
-\resumeProjectHeading
-{\textbf{\href{https://github.com/CLoaKY233/DataStreams}{Kafka-Driven Distributed Image Classification Pipeline}}}{08/2024}
-\resumeItemListStart
-\resumeItem{Architected Kafka-based asynchronous ML pipeline with producer-consumer topology for image ingestion, CNN inference, and result distribution across decoupled microservices, processing 256x256 grayscale images using PyTorch \& TensorFlow with batch training (size=32) and Adam optimizer}
-
-\resumeItem{Engineered production deployment with ONNX optimization, Flask API serving, MLflow experiment tracking, and cross-framework validation supporting PNG/JPG/WEBP formats with real-time inference capabilities}
-\resumeItemListEnd
-
-
-
-\resumeSubHeadingListEnd
-\vspace{6pt}
-\section{{ACHIEVEMENTS}}
-\resumeSubHeadingListStart
     \resumeSubheading
-      {Smart India National Hackathon (SIH)}{12/2024}
-      {National Finalist}{6-member team}
+      {Open Source Contributor}{Mar. 2025 -- Present}
+      {Zed Industries \& Rust Foundation}{}
       \resumeItemListStart
-        \resumeItem{Led design and prototyping of low-cost myoelectric prosthetic hand using EMG sensors, ESP32 microcontroller, and BLE-powered mobile app for real-time gesture recognition, reducing typical hardware cost to under 12k INR.}
-        \resumeItem{{\href{https://github.com/CLoaKY233/prosthetic-hand-SIH}{Github Link}}: Implemented ESP32 NODEMCU and ESP32-C6 communication protocols for commands and display with motor function.}
+        \resumeItem{Eliminated a critical \textbf{application crash} affecting the LSP store by backtracing invalid journal paths and implementing defensive error propagation across 3 Rust modules, \textbf{restoring stability for users.} \href{https://github.com/zed-industries/zed/pull/42117}{\underline{\textbf{[\#42117]}}}.}
+        \resumeItem{Accelerated environment debugging for \textbf{10K+ active users} by implementing a verbose toolchain inspection feature in \textbf{rustup}, directly resolving a long-standing community feature request for better path visibility \underline{\href{https://github.com/rust-lang/rustup/pull/4270}{\textbf{[\#4270]}}}.}
       \resumeItemListEnd
-\vspace{-8pt}
-      \resumeSubheading
-      {PreProdCorp Buildathon}{12/2024}
-      {Winner}{Team of 3}
-      \resumeItemListStart
-        \resumeItem{Built web-based AutoML platform using Streamlit and PyCaret, enabling non-technical users to train and compare 8+ ML models on tabular datasets through interactive UI without manual model tuning}
-      \resumeItemListEnd
-\resumeSubHeadingListEnd
+
+  \resumeSubHeadingListEnd
 
 
+
+
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+     \resumeProjectHeading
+    {\textbf{EmbraceDB: B+Tree KV Database} $|$ \emph{C++23, WAL, Snapshots} $|$ \href{https://github.com/CLoaKY233/EmbraceDB}{\underline{GitHub}}}{Nov. 2025}
+
+        \resumeItemListStart
+        \resumeItem{Designed high-performance B+Tree storage engine in C++23 achieving 421,000 point lookups per second to demonstrate production-grade database implementation patterns for learning distributed systems.}
+        \resumeItem{Implemented crash-safe durability via write-ahead logging with CRC32 checksums enabling sub-second recovery, ensuring zero data loss during unexpected shutdowns.}
+        \resumeItem{Optimized mixed workload throughput to 215,000 ops/sec by batching WAL writes in 4KB blocks and implementing in-place updates for read-heavy operations.}
+
+    \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\textbf{Agentless Backend API for monitoring} $|$ \emph{Rust, Tokio, SSH, Docker, LTO} $|$ \href{https://github.com/cloaky233/axum-backend}{\underline{GitHub}}}{Oct. 2025}
+
+          \resumeItemListStart
+            \resumeItem{Achieved \textless6MB runtime footprint by designing agentless Rust monitoring system, eliminating deployment overhead vs Grafana/Prometheus}
+            \resumeItem{Reduced SSH timeout failures from 15\% to \textless2\% at 100 concurrent connections by implementing layered timeout orchestration for async execution}
+            \resumeItem{Decreased Docker image size from 500MB to 30MB through multi-stage builds and link-time optimization, reducing deployment time by 80\%.}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C/C++, Rust, Python, SQL, Bash} \\
+     \vspace{1pt}
+     \textbf{Systems \& Concurrency}{: Multi-threading, Async I/O, Memory Management, Inter-process Communication, Socket Programming} \\
+     \vspace{1pt}
+     \textbf{Software Architecture}{: Microservices, REST APIs, Event-driven Architecture, Caching Strategies, Load Balancing} \\
+     \vspace{1pt}
+     \textbf{Tools \& Technologies}{: PostgreSQL, Redis, Kafka, Docker, Kubernetes, Git, Linux, AWS (EC2, S3)} \\
+     \vspace{1pt}
+     \textbf{Core Expertise}{: System Design, Distributed Systems, Performance Optimization, Debugging \& Profiling}\\
+    }}
+ \end{itemize}
+
+
+
+
+
+
+
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    \textbf{LeetCode Weekly Contest 478} {: \href{https://leetcode.com/contest/weekly-contest-478/ranking/?region=global_v2}{\underline{Global Rank 244/25,246}} (Top 1\%), solved all 4 problems} \\
+    \vspace{1pt}
+     \textbf{\href{https://surrealdb.com/ambassador-programme}{SurrealDB Technical Ambassador}}{: Recognized as official ambassador; authored "LLM-as-a-Judge" RAG implementation featured in \href{https://surrealdb.com/blog/beyond-basic-rag-building-a-multi-cycle-reasoning-engine-on-surrealdb}{\underline{official engineering blog}} as reference architecture.} \\
+     \vspace{1pt}
+     \textbf{National Finalist, Smart India Hackathon}{: Led 6-person team to prototype low-cost myoelectric prosthetic hand with EMG gesture recognition, achieving 85\% cost reduction vs commercial systems.} \\
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
 \end{document}
